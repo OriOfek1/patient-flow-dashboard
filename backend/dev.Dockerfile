@@ -1,6 +1,4 @@
-ARG DOCKER_INTERNAL_REGISTRY
-
-FROM ${DOCKER_INTERNAL_REGISTRY}arc/base-node:v1.3.0.main
+FROM arc/base-node:v1.3.0.main
 WORKDIR /opt/frontend/frontend
 
 COPY src/frontend/frontend/package.json /opt/frontend/frontend/package.json

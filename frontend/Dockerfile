@@ -1,6 +1,4 @@
-ARG DOCKER_BUILD_REGISTRY
-
-FROM ${DOCKER_BUILD_REGISTRY}arc/cyto-pathway-backend:dev
+FROM arc/cyto-pathway-backend:dev
 
 COPY src/backend/backend /opt/backend/backend
 
