@@ -27,11 +27,27 @@ A modern, flat-style web app for real-time hospital patient flow monitoring — 
 ```bash
 git clone https://github.com/YOUR_USERNAME/patient-flow-dashboard.git
 cd patient-flow-dashboard
-docker-compose up --build
+docker compose up --build
 ```
 
-- App will be available at: [http://localhost](http://localhost)
-- API at: [http://localhost/api/station_status](http://localhost/api/station_status)
+- App will be available at: [http://localhost:8080](http://localhost:8080)
+- API at: [http://localhost:8000/api/station_status](http://localhost:8000/api/station_status)
+
+### Manual Docker usage
+
+Build images:
+
+```bash
+docker build -t pf-backend ./backend
+docker build -t pf-frontend ./frontend
+```
+
+Run containers:
+
+```bash
+docker run -p 8000:8000 pf-backend
+docker run -p 8080:80 --link pf-backend pf-frontend
+```
 
 ## Development
 
