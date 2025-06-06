@@ -1,7 +1,11 @@
 
 import React from 'react'
 
-const GlobalStatusBanner = ({ stationData }) => {
+interface Props {
+  stationData: { [key: string]: { status: string } }
+}
+
+const GlobalStatusBanner: React.FC<Props> = ({ stationData }) => {
   const statuses = Object.values(stationData).map(s => s.status)
 
   let globalStatus = 'fluid'

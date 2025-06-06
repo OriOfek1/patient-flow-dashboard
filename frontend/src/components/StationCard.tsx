@@ -1,7 +1,16 @@
 
 import React from 'react'
 
-const StationCard = ({ stationId, data }) => {
+interface Props {
+  stationId: string
+  data?: {
+    patients_in_queue: number
+    avg_time: string
+    status: string
+  }
+}
+
+const StationCard: React.FC<Props> = ({ stationId, data }) => {
   if (!data) return null
 
   return (

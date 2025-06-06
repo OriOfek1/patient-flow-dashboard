@@ -4,8 +4,18 @@ import GlobalStatusBanner from './components/GlobalStatusBanner'
 import StationMap from './components/StationMap'
 import CurrentBottleneckSummary from './components/CurrentBottleneckSummary'
 
-const App = () => {
-  const [stationData, setStationData] = useState({})
+interface StationInfo {
+  patients_in_queue: number
+  avg_time: string
+  status: string
+}
+
+interface Stations {
+  [key: string]: StationInfo
+}
+
+const App: React.FC = () => {
+  const [stationData, setStationData] = useState<Stations>({})
 
   const fetchData = async () => {
     try {

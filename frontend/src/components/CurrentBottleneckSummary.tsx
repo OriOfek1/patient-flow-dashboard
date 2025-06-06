@@ -1,7 +1,11 @@
 
 import React from 'react'
 
-const CurrentBottleneckSummary = ({ stationData }) => {
+interface Props {
+  stationData: { [key: string]: { status: string } }
+}
+
+const CurrentBottleneckSummary: React.FC<Props> = ({ stationData }) => {
   const bottleneck = Object.entries(stationData).find(([, data]) => data.status === 'over_capacitated')
 
   return (

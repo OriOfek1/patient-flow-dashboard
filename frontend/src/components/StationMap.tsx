@@ -2,7 +2,11 @@
 import React from 'react'
 import StationCard from './StationCard'
 
-const StationMap = ({ stationData }) => {
+interface Props {
+  stationData: { [key: string]: { patients_in_queue: number; avg_time: string; status: string } }
+}
+
+const StationMap: React.FC<Props> = ({ stationData }) => {
   return (
     <div className="station-map">
       {Object.entries(stationData).map(([stationId, data], index, array) => (

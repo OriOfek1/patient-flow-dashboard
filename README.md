@@ -5,7 +5,7 @@ A modern, flat-style web app for real-time hospital patient flow monitoring — 
 
 - ⚛️ ReactJS (frontend)
 - 🐍 FastAPI (backend)
-- 🌐 NGINX (reverse proxy / static frontend)
+- 🔧 Node + TypeScript (frontend)
 - 🐳 Docker Compose (orchestration)
 
 ## Features
@@ -63,7 +63,7 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```bash
 cd frontend
 npm install
-npm run dev
+npm run start
 ```
 
 ## Roadmap
