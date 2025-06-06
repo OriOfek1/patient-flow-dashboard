@@ -1,9 +1,0 @@
-{
-  "name": "frontend",
-  "version": "0.1.0",
-  "scripts": {
-    "start": "echo 'starting dev server' && sleep infinity",
-    "build": "echo 'building frontend'",
-    "serve": "npx serve -s build"
-  }
-}

@@ -56,16 +56,16 @@ docker run -p 3000:80 pf-frontend
 ### Backend
 
 ```bash
-cd src/backend
-uvicorn backend.app:app --reload --host 0.0.0.0 --port 8000
+cd backend
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### Frontend
 
 ```bash
-cd src/frontend/frontend
+cd frontend
 npm install
-npm run start
+npm run dev
 ```
 
 ## Roadmap
