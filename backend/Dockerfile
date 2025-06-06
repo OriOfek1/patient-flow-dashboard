@@ -1,10 +1,10 @@
+ARG DOCKER_BUILD_REGISTRY
 
-FROM python:3.11-slim
+FROM ${DOCKER_BUILD_REGISTRY}arc/cyto-pathway-frontend:dev
 
-WORKDIR /app
+COPY src/frontend/frontend/src /opt/frontend/frontend/src
+COPY src/frontend/frontend/public /opt/frontend/frontend/public
 
-COPY . .
+RUN npm -verbose run build
 
-RUN pip install fastapi uvicorn[standard]
-
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD npm run serve

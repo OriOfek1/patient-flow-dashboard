@@ -1,16 +1,7 @@
+ARG DOCKER_BUILD_REGISTRY
 
-# Build step
-FROM node:20-alpine AS build
+FROM ${DOCKER_BUILD_REGISTRY}arc/cyto-pathway-backend:dev
 
-WORKDIR /app
+COPY src/backend/backend /opt/backend/backend
 
-COPY package.json package-lock.json ./
-RUN npm install
-
-COPY . .
-RUN npm run build
-
-# Production step
-FROM nginx:alpine
-
-COPY --from=build /app/dist /usr/share/nginx/html
+CMD uvicorn backend.app:app --host 0.0.0.0 --port 80

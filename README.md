@@ -38,16 +38,16 @@ docker-compose up --build
 ### Backend
 
 ```bash
-cd backend
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+cd src/backend
+uvicorn backend.app:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### Frontend
 
 ```bash
-cd frontend
+cd src/frontend/frontend
 npm install
-npm run dev
+npm run start
 ```
 
 ## Roadmap
