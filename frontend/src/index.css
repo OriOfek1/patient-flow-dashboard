@@ -1,0 +1,74 @@
+
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #eef3f8, #dfe8f1);
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.global-banner {
+  font-size: 2em;
+  padding: 15px;
+  color: white;
+}
+
+.global-banner.fluid {
+  background-color: green;
+}
+.global-banner.caution {
+  background-color: orange;
+}
+.global-banner.over_capacitated {
+  background-color: red;
+}
+
+.station-map {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.station-card {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  width: 150px;
+  transition: transform 0.3s;
+}
+
+.station-card.fluid {
+  background-color: #d0f5d0;
+}
+.station-card.caution {
+  background-color: #fff5cc;
+}
+.station-card.over_capacitated {
+  background-color: #f8cccc;
+  animation: shake 0.5s infinite alternate;
+}
+
+@keyframes shake {
+  from { transform: translateX(0px); }
+  to { transform: translateX(5px); }
+}
+
+.flow-arrow {
+  font-size: 2em;
+  animation: pulseArrow 1s infinite;
+}
+
+@keyframes pulseArrow {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.bottleneck-summary {
+  margin-top: 30px;
+  font-size: 1.2em;
+}
